@@ -1,0 +1,9 @@
+
+If tables are in a single schema, this approach could work (below code assumes that the name of your schema is public)
+
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+If you are using PostgreSQL 9.3 or greater, you may also need to restore the default grants.
+
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO public;
